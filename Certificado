@@ -1,0 +1,35 @@
+import java.awt.BorderLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Certificado extends JFrame {
+	ImageIcon imagem = new ImageIcon(getClass().getResource("certificado.png"));
+	JLabel fundo = new JLabel(imagem);
+	JButton baixar = new JButton();
+	
+	public Certificado() {
+		setTitle("Certificado");
+		setSize(650,410);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setLayout(new BorderLayout());
+		
+		
+		baixar.setBounds(900, 470, 50, 40);
+		//baixar.setBorderPainted(false);
+		baixar.setFocusable(false);
+		baixar.setContentAreaFilled(false);
+		
+        		
+        
+        		
+        		add(baixar);
+        		add(fundo);
+	}
+	public static void main (String[] args) {
+		new Certificado();
+	}
+}
