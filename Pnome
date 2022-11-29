@@ -1,0 +1,60 @@
+package Play;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+
+public class Pnome extends JFrame{
+		
+		ImageIcon imagem = new ImageIcon(getClass().getResource("nome.png"));
+		JLabel label = new JLabel(imagem);
+		JTextField caixanome = new JTextField();
+		JButton confirmar = new JButton();
+		Font fonte = new Font("Arial", Font.BOLD,30);		
+		public Pnome() {
+			setTitle("");
+			setSize(650,410);
+			setLocationRelativeTo(null);
+			setVisible(true);
+			setDefaultCloseOperation(EXIT_ON_CLOSE);
+			
+			caixanome.setBounds(150,135,310,40);
+			caixanome.setFont(fonte);
+			caixanome.setBackground(new Color(71, 60, 139));
+			caixanome.setForeground(new Color(255, 250, 250));
+			caixanome.setBorder(new LineBorder(new Color(148,0,211)));
+			
+			
+			confirmar.setBounds(255,200,125,45);
+			confirmar.setBorderPainted(false);
+			confirmar.setFocusable(false);
+			confirmar.setContentAreaFilled(false);
+	        
+			 confirmar.addActionListener(
+					 new ActionListener() {
+		        public void actionPerformed(ActionEvent e) {
+		        		setVisible(true);
+		        		new Fase7();
+		        		
+		        }
+		        		});;			
+			
+		        		
+		    add(caixanome);    		
+			add(confirmar);
+			add(label);
+		}
+		
+		public static void main(String[]args) {
+			new Pnome();
+		}
+		
+}
